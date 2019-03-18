@@ -4,11 +4,11 @@ plugins {
     id 'maven-publish'
 }
 
+group 'me.yuanbin'
+version '0.0.1-SNAPSHOT'
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
-
-group 'me.yuanbin'
-version '0.0.1'
 
 ext {
     junitVersion = "4.12"
@@ -23,9 +23,9 @@ repositories {
 }
 
 dependencies {
-    implementation "com.google.guava:guava:${guavaVersion}"
-    implementation "com.typesafe:config:${configVersion}"
-    testImplementation "junit:junit:${junitVersion}"
+    implementation "com.google.guava:guava:$guavaVersion"
+    implementation "com.typesafe:config:$configVersion"
+    testImplementation "junit:junit:$junitVersion"
 }
 
 publishing {
