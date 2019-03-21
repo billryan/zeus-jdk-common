@@ -5,8 +5,8 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class TypesafeConfigTest {
-    private Config config = TypesafeConfig.build("ci");
+public class TypesafeConfigBuilderTest {
+    private Config config = TypesafeConfigBuilder.build("ci");
 
     @Test
     public void testConfig() {

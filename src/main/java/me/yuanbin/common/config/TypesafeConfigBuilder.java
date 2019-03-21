@@ -4,7 +4,7 @@ import com.google.common.base.Strings;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 
-public class TypesafeConfig {
+public class TypesafeConfigBuilder {
     private static final String PROFILES = "APP_PROFILES_ACTIVE";
     private static final String DEFAULT_PROFILES = "dev";
 
