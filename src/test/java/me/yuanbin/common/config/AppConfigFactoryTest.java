@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class TypesafeConfigBuilderTest {
-    private Config config = TypesafeConfigBuilder.build("ci");
+    private Config config = AppConfigFactory.load("ci");
 
     @Test
     public void testConfig() {
