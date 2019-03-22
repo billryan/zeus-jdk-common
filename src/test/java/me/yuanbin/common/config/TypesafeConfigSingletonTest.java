@@ -11,7 +11,10 @@ public class TypesafeConfigSingletonTest {
     public void testSingleton() {
         Config config1 = TypesafeConfigSingleton.INSTANCE.getConfig();
         Config config2 = TypesafeConfigSingleton.INSTANCE.getConfig();
-        assertEquals(config1, config2);
+        Config ciConfig = TypesafeConfigBuilder.build("ci");
+        assert config1 == config2;
+        // Typesafe ConfigFactory is a cached Singleton
+        assert config1 == ciConfig;
         assertEquals(config1.getString("app.profiles.active"), "ci");
     }
 }
