@@ -14,4 +14,11 @@ public class AppConfigFactoryTest {
         assertEquals(8080, config.getInt("common.port"));
         assertEquals("ci", config.getString("app.profiles.active"));
     }
+
+    @Test
+    public void testSingleton() {
+        Config config1 = AppConfigFactory.load();
+        Config config2 = AppConfigFactory.load();
+        assert config1 == config2;
+    }
 }

@@ -12,7 +12,7 @@ public class AppConfigFactory {
      * priority: profile > propVar > envVar > DEFAULT_PROFILE
      * read from -D first, then OS environment.
      * Set with default profiles if env and prop is empty.
-     * @param profile
+     * @param profile dev/ci/test/prod
      * @return application profile filename
      */
     private static String getAppProfile(String profile) {
@@ -29,11 +29,15 @@ public class AppConfigFactory {
      * @return Application Config Singleton Instance
      */
     public static Config load() {
-        return load(null);
+        return appConfigHolder.appConfig;
     }
 
-    public static Config load(String env) {
-        String configFile = getAppProfile(env);
+    private static class appConfigHolder {
+        private static final Config appConfig = load(null);
+    }
+
+    public static Config load(String profile) {
+        String configFile = getAppProfile(profile);
         return ConfigFactory.load(configFile);
     }
 }
