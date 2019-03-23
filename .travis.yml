@@ -1,2 +1,6 @@
 language: java
 
+script:
+  - ./gradlew check
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then ./gradlew build; fi
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then ./gradlew publish; fi
