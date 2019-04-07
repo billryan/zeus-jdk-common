@@ -1,4 +1,4 @@
-package me.yuanbin.common.config;
+package me.yuanbin.common.util;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
@@ -6,7 +6,6 @@ import com.typesafe.config.Config;
 import com.typesafe.config.ConfigException;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class TypesafeConfigUtil {
 
@@ -39,8 +38,6 @@ public class TypesafeConfigUtil {
         List<String> regexList = getStringList(config, path);
         if (regexList.size() == 0) {
             throw new IllegalArgumentException(String.format("path %s should not be empty!", path));
-        } else if (regexList.size() == 1) {
-            return regexList.get(0);
         } else {
             return String.join("|", regexList);
         }

@@ -1,7 +1,8 @@
-package me.yuanbin.common.config;
+package me.yuanbin.common.util;
 
 import com.google.common.collect.ImmutableList;
 import com.typesafe.config.Config;
+import me.yuanbin.common.config.AppConfigFactory;
 import org.junit.Test;
 
 import java.util.List;
